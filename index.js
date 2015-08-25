@@ -5,8 +5,8 @@
 */
 var fs = require('fs')
 var concat = require('concat-stream')
-var file = process.argv[2]
-var keys = process.argv[3]
+var file = process.argv[1]
+var keys = process.argv[2]
 
 if (file === '-') {
   var input = process.stdin
@@ -30,9 +30,3 @@ input.pipe(concat(function (buf) {
 
   writer.write(JSON.stringify(json))
 }))
-
-function buildValue (parts) {
-  if (!parts[1]) return parts[0]
-  if (parts[1].indexOf(':') > -1) return parts[1]
-  return parts[0] + buildValue(parts.splice(1))
-}
