@@ -1,10 +1,10 @@
 {
   "name": "jsonput",
   "version": "1.0.0",
-  "description": "[![NPM](https://nodei.co/npm/jsonput.png)](https://nodei.co/npm/jsonput/)",
+  "description": "Put json key/value pairs into a file or json stream from the command line",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "bin": {
+    "jsonput": "index.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/karissa/jsonput/issues"
   },
-  "homepage": "https://github.com/karissa/jsonput"
+  "preferGlobal": true,
+  "homepage": "https://github.com/karissa/jsonput",
+  "dependencies": {
+    "concat-stream": "^1.5.0"
+  }
 }
